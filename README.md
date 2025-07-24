@@ -10,3 +10,6 @@ VolunteerSync was as well my Capstone project at Mount Kenya University for the 
 * **Task Assignment:** Assign tasks to volunteers based on availability and skills, with automated notifications.
 * **Dashboard:** Visualize volunteer participation and event progress with JavaScript-based charts.
 * **Authentication:** Secure login and role-based access control.
+
+## Authors
+* **Jordan Tuyisenge** - [Github](https://github.com/digi000)

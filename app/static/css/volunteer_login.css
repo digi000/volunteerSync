@@ -1,0 +1,253 @@
+:root {
+    --primary: #4CAF50;
+    --secondary: #2E7D32;
+    --light: #F5F5F5;
+    --dark: #212121;
+    --gray: #757575;
+    --error: #D32F2F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.login-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.login-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.volunteer-icon {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 3.5rem;
+    opacity: 0.2;
+}
+
+.login-form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gray);
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: var(--primary);
+}
+
+.forgot-password {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: text-decoration 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.social-login {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.social-divider {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.social-divider::before,
+.social-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin: 0 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.apple {
+    background-color: #000;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-decoration 0.3s ease;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        border-radius: 0;
+    }
+
+    .login-header {
+        padding: 25px 20px;
+    }
+
+    .login-form {
+        padding: 25px 20px;
+    }
+}

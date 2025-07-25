@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VolunteerSync - Volunteer Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/volunteer_register.css') }}"> </head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <i class="fas fa-hands-helping volunteer-icon"></i>
+            <h1>Become a Volunteer</h1>
+            <p>Join our community and make a difference</p>
+        </div>
+        
+        <form class="register-form" id="volunteerRegisterForm">
+            <div class="form-row">
+                <div class="form-group required">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" class="input-field" placeholder="John">
+                </div>
+                <div class="form-group required">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" class="input-field" placeholder="Doe">
+                </div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="input-field" placeholder="your@email.com" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group required">
+                    <label for="telephone">Phone Number</label>
+                    <input type="tel" id="telephone" class="input-field" placeholder="1234567890" pattern="[0-9]{10}" required>
+                    <div class="error-message" id="phoneError">Please enter a 10-digit phone number</div>
+                </div>
+                <div class="form-group required">
+                    <label for="emergency-contact">Emergency Contact</label>
+                    <input type="tel" id="emergency-contact" class="input-field" placeholder="9876543210" pattern="[0-9]{10}" required>
+                    <div class="error-message" id="emergencyError">Please enter a 10-digit phone number</div>
+                </div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="address">Street Address</label>
+                <input type="text" id="address" class="input-field" placeholder="123 Main St, City, State" required>
+                <div class="error-message" id="addressError">Address is required</div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="skills">Your Skills</label>
+                <select id="skills" multiple placeholder="Select your skills...">
+                    <option value="first_aid">First Aid Certified</option>
+                    <option value="carpentry">Carpentry</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="teaching">Teaching</option>
+                    <option value="language">Bilingual</option>
+                    <option value="driving">Driving License</option>
+                    <option value="tech">Tech Support</option>
+                    <option value="medical">Medical Training</option>
+                    <option value="art">Art/Design</option>
+                    <option value="construction">Construction</option>
+                </select>
+                <div class="error-message" id="skillsError">Please select at least one skill</div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" class="input-field" placeholder="Create a password" required>
+                    <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+                <div class="password-strength">
+                    <div class="password-strength-bar" id="passwordStrength"></div>
+                </div>
+                <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" class="input-field" placeholder="Confirm your password" required>
+                    <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+                </div>
+                <div class="error-message" id="confirmError">Passwords don't match</div>
+            </div>
+            
+            <button type="submit" class="register-btn">Join as Volunteer</button>
+            
+            <div class="login-link">
+                Already have an account? <a href="{{ url_for('auth.volunteer_login') }}">Log in here</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/volunteer_register.js') }}"></script> </body>
+</html>

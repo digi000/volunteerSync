@@ -14,35 +14,37 @@
       <p>Get started managing volunteers today</p>
     </div>
 
-    <form class="register-form" id="orgRegisterForm">
+    <form class="register-form" id="orgRegisterForm" method="POST" action="{{ url_for('auth.organization_register') }}">
+      {{ form.hidden_tag() }}  <!-- CSRF token -->
+      
       <div class="form-group required">
-        <label for="org-name">Organization Name</label>
-        <input type="text" id="org-name" class="input-field" placeholder="Acme Nonprofit" required />
+        <label for="name">Organization Name</label>
+        {{ form.name(class="input-field", id="name", placeholder="Acme Nonprofit") }}
         <div class="error-message" id="nameError">Organization name is required</div>
       </div>
 
       <div class="form-group required">
         <label for="email">Email Address</label>
-        <input type="email" id="email" class="input-field" placeholder="contact@yourorg.org" required />
+        {{ form.email(class="input-field", id="email", placeholder="contact@yourorg.org") }}
         <div class="error-message" id="emailError">Please enter a valid email address</div>
       </div>
 
       <div class="form-group required">
         <label for="address">Street Address</label>
-        <input type="text" id="address" class="input-field" placeholder="123 Main St, City" required />
+        {{ form.address(class="input-field", id="address", placeholder="123 Main St, City") }}
         <div class="error-message" id="addressError">Address is required</div>
       </div>
 
       <div class="form-group">
         <label for="telephone">Phone Number</label>
-        <input type="tel" id="telephone" class="input-field" placeholder="(123) 456-7890" pattern="[0-9]{10}" />
+        {{ form.telephone(class="input-field", id="telephone", placeholder="(123) 456-7890") }}
         <div class="error-message" id="phoneError">Please enter a 10-digit phone number</div>
       </div>
 
       <div class="form-group required">
         <label for="password">Password</label>
         <div class="password-container">
-          <input type="password" id="password" class="input-field" placeholder="Create a password" required />
+          {{ form.password(class="input-field", id="password", placeholder="Create a password") }}
           <i class="fas fa-eye toggle-password" id="togglePassword"></i>
         </div>
         <div class="password-strength">
@@ -52,15 +54,15 @@
       </div>
 
       <div class="form-group required">
-        <label for="confirm-password">Confirm Password</label>
+        <label for="confirm_password">Confirm Password</label>
         <div class="password-container">
-          <input type="password" id="confirm-password" class="input-field" placeholder="Confirm your password" required />
+          {{ form.confirm_password(class="input-field", id="confirm_password", placeholder="Confirm your password") }}
           <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
         </div>
         <div class="error-message" id="confirmError">Passwords don't match</div>
       </div>
 
-      <button type="submit" class="register-btn">Register Organization</button>
+      {{ form.submit(class="register-btn") }}
 
       <div class="login-link">
         Already have an account? <a href="{{ url_for('auth.organization_login') }}">Log in here</a>
